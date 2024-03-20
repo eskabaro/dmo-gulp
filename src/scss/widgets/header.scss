@@ -1,0 +1,53 @@
+.header {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    height: $headerHeight;
+    font-size: toRem(14);
+    box-shadow: 0 0 0 100vmax aquamarine;
+    clip-path: inset(0 -100vmax);
+
+    &__logo {
+        @include flexRow(center);
+        gap: toRem(24);
+        margin-right: toRem(38);
+
+        > a {
+            margin-left: -120px;
+
+            @media all and (max-width: 1733px) {
+                margin-left: 0;
+            }
+        }
+
+        @media all and (max-width: $tablet) {
+            > a img {
+                width: toRem(99);
+                height: toRem(24);
+            }
+        }
+    }
+
+    &__nav_box {
+        @include flexRow(center);
+        gap: toRem(124);
+    }
+}
+
+.nav_box {
+    &__navigation {
+        > ul {
+            display: flex;
+            gap: toRem(38);
+        }
+    }
+
+    &__services {
+        @include flexRow(center);
+        gap: toRem(24);
+
+        > button {
+            background-color: red;
+        }
+    }
+}

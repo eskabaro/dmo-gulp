@@ -4,11 +4,11 @@ import { path } from "./gulp/config/path.js";
 import { plugins } from "./gulp/config/plugins.js";
 
 global.app = {
-  isBuild: process.argv.includes("--build"),
-  isDev: !process.argv.includes("--build"),
-  path: path,
-  gulp: gulp,
-  plugins: plugins,
+    isBuild: process.argv.includes("--build"),
+    isDev: !process.argv.includes("--build"),
+    path: path,
+    gulp: gulp,
+    plugins: plugins,
 };
 
 import { copy } from "./gulp/tasks/copy.js";
@@ -24,11 +24,11 @@ import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
 
 function watcher() {
-  gulp.watch(path.watch.files, copy);
-  gulp.watch(path.watch.html, html);
-  gulp.watch(path.watch.scss, scss);
-  gulp.watch(path.watch.js, js);
-  gulp.watch(path.watch.images, images);
+    gulp.watch(path.watch.files, copy);
+    gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.scss, scss);
+    gulp.watch(path.watch.js, js);
+    gulp.watch(path.watch.images, images);
 }
 
 export { svgSprive };
@@ -36,8 +36,8 @@ export { svgSprive };
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
 const mainTasks = gulp.series(
-  fonts,
-  gulp.parallel(copy, html, scss, js, images)
+    fonts,
+    gulp.parallel(copy, html, scss, js, images)
 );
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
