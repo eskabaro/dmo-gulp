@@ -1,11 +1,19 @@
 .header {
-    background-color: aquamarine;
+    @include container();
+    width: 100%;
+    background-color: var(--midnightBlack);
     display: flex;
     justify-content: space-between;
     height: $headerHeight;
     font-size: toRem(14);
-    box-shadow: 0 0 0 100vmax aquamarine;
+    box-shadow: 0 0 0 100vmax var(--midnightBlack);
     clip-path: inset(0 -100vmax);
+    color: $opacityText;
+
+    &__btn_burger {
+        display: none;
+        height: toRem(24);
+    }
 
     &__logo {
         @include flexRow(center);
@@ -15,15 +23,30 @@
         > a {
             margin-left: -120px;
 
-            @media all and (max-width: 1733px) {
+            @media all and (max-width: 1880px) {
                 margin-left: 0;
             }
         }
 
+        @media all and (max-width: $pc) {
+            margin-right: toRem(28);
+        }
+
         @media all and (max-width: $tablet) {
-            > a img {
-                width: toRem(99);
+            margin-right: toRem(26);
+            margin-left: auto;
+
+            > a {
                 height: toRem(24);
+
+                > img {
+                    width: toRem(99);
+                    height: toRem(24);
+                }
+            }
+
+            > figcaption {
+                display: none;
             }
         }
     }
@@ -31,6 +54,18 @@
     &__nav_box {
         @include flexRow(center);
         gap: toRem(124);
+
+        @media all and (max-width: $pc) {
+            gap: toRem(40);
+        }
+    }
+
+    @media all and (max-width: $tablet) {
+        align-items: center;
+
+        &__btn_burger {
+            display: block;
+        }
     }
 }
 
@@ -39,6 +74,9 @@
         > ul {
             display: flex;
             gap: toRem(38);
+            > li > a {
+                color: $opacityText;
+            }
         }
     }
 
@@ -46,8 +84,42 @@
         @include flexRow(center);
         gap: toRem(24);
 
-        > button {
-            background-color: red;
+        &__sign_in {
+            @include button(transparent, 0, 0, _, $opacityText);
+            display: flex;
+            align-items: center;
+            gap: toRem(8);
+        }
+
+        &__subscribe {
+            color: var(--white);
+            @include button(
+                var(--springLime),
+                toRem(6) toRem(10),
+                $smallRadius
+            );
+        }
+    }
+
+    @media all and (max-width: $pc) {
+        &__navigation > ul {
+            gap: toRem(28);
+        }
+
+        &__services {
+            gap: toRem(16);
+        }
+    }
+
+    @media all and (max-width: $tablet) {
+        &__navigation {
+            display: none;
+        }
+
+        &__services {
+            &__sign_in {
+                display: none !important;
+            }
         }
     }
 }

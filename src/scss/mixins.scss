@@ -9,16 +9,27 @@
     $result: math-div($px, $from) * 100%;
     @return $result;
 }
+
 //toRem
 @function toRem($px) {
     $result: math-div($px, 16) + rem;
     @return $result;
 }
+
 //EM
 @function em($px, $current: 16) {
     $result: math-div($px, $current) + em;
     @return $result;
 }
+
+@mixin container($padding: $paddingContainer) {
+    margin: auto;
+    max-width: toRem($maxWidthContainer);
+    min-width: toRem($minWidth);
+    padding-inline: $padding;
+    box-sizing: border-box;
+}
+
 // Row Flex
 @mixin flexRow($align: initial, $justify: initial) {
     display: flex;
@@ -33,6 +44,35 @@
     flex-direction: column;
     align-items: $align;
     justify-content: $justify;
+}
+
+// Buttons
+@mixin button($bg, $padding, $radius, $width: auto, $color: var(--white)) {
+    width: $width;
+    background-color: $bg;
+    padding: $padding;
+    border: 2px solid $bg;
+    border-radius: $radius;
+    transition: $transition;
+    font-weight: 500;
+    font-size: 14px;
+    color: $color;
+}
+
+@mixin font(
+    $min,
+    $vw,
+    $max,
+    $weight,
+    $color: var(--white),
+    $font: var(--poppins),
+    $lineHeight: normal
+) {
+    font-size: clamp($min, $vw, $max);
+    font-family: $font;
+    font-weight: $weight;
+    color: $color;
+    line-height: $lineHeight;
 }
 
 // Adaptive property (clamp)
