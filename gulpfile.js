@@ -22,6 +22,7 @@ import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
+import { deploy } from "./gulp/tasks/deploy.js";
 
 function watcher() {
     gulp.watch(path.watch.files, copy);
@@ -44,10 +45,12 @@ const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
+const deployGIT = gulp.series(buildTasks, deploy);
 
 export { dev };
 export { build };
 export { deployZIP };
 export { deployFTP };
+export { deployGIT };
 
 gulp.task("default", dev);
