@@ -40,19 +40,19 @@
     }
 }
 
-// ::-webkit-scrollbar {
-//     width: toRem(3);
-//     height: toRem(3);
+::-webkit-scrollbar {
+    width: toRem(3);
+    height: toRem(3);
 
-//     &-thumb {
-//         background-color: $accent;
-//         border-radius: toRem(3);
-//     }
+    &-thumb {
+        background-color: var(--skyAzure);
+        border-radius: toRem(2);
+    }
 
-//     &-track {
-//         background-color: #fff;
-//     }
-// }
+    &-track {
+        background-color: #fff;
+    }
+}
 
 html,
 body {

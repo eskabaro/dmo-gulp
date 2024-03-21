@@ -4,7 +4,8 @@
     background-repeat: no-repeat;
     background-position: 100%;
     background-size: auto 80%;
-    max-width: 1995px;
+    // max-width: 1995px;
+    max-width: 1835px;
     width: 100%;
     margin: auto;
     display: flex;
@@ -74,20 +75,13 @@
             margin-top: toRem(40);
             margin-bottom: toRem(75);
             max-width: 50%;
-            @include font(
-                toRem(16),
-                1vw,
-                toRem(26),
-                400,
-                $opacityText,
-                null,
-                100%
-            );
+            line-height: 108%;
+            @include font(toRem(16), 1vw, toRem(26), 400, $opacityText, null);
         }
     }
 
     @media all and (max-width: $tablet) {
-        background-image: none;
+        background-image: none !important;
         flex-direction: column;
 
         &__mobile_bg {
@@ -121,7 +115,7 @@
         margin-top: toRem(52);
         // max-width: 60%;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: toRem(29);
 
         &__item {
@@ -138,7 +132,10 @@
             }
 
             > p {
-                @include font(toRem(14), 0vw, toRem(14), 400, $opacityText);
+                // @include font(toRem(14), 0vw, toRem(14), 400, $opacityText);
+                color: $opacityText;
+                font-size: toRem(14);
+                font-weight: 400;
             }
         }
     }

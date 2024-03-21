@@ -85,7 +85,7 @@
         gap: toRem(24);
 
         &__sign_in {
-            @include button(transparent, 0, 0, _, $opacityText);
+            @include button(transparent, 0, 0, null, $opacityText);
             display: flex;
             align-items: center;
             gap: toRem(8);
