@@ -50,12 +50,10 @@
                 display: flex;
                 transform: scale(0.82);
                 border-radius: toRem(20);
-                overflow: hidden;
+                // overflow: hidden;
 
                 &.active {
                     transform: scale(1);
-                    > .slide__content {
-                    }
                 }
 
                 > img {
