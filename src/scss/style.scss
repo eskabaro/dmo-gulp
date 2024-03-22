@@ -2,9 +2,9 @@
 @import "./mixins.scss";
 @import "./variables.scss";
 
-// modules
 @import "./widgets/header.scss";
 @import "./components/preview.scss";
+@import "./components/service-overview.scss";
 
 // fonts
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -19,13 +19,15 @@
     // colors
     --midnightBlack: #0c0d11;
     --midnightNavy: #12131c;
+    --midnightCharcoal: #151721;
+    --charcoalBlack: #151515;
+    --midnightIndigo: rgba(52, 56, 78, 0.1);
+    --charcoalGray: #5b5b5b;
     --white: #ffffff;
     --springLime: #92c53e;
+    --skyAzure: #3f97eb;
     --springBud: #93c246;
     --electricSkyBlue: #02c2ff;
-
-    --midnightCharcoal: #151721;
-    --skyAzure: #3f97eb;
 
     --paddingContainer: 80px;
     --paddingMinusContainer: -30px;
@@ -40,19 +42,19 @@
     }
 }
 
-::-webkit-scrollbar {
-    width: toRem(3);
-    height: toRem(3);
+// ::-webkit-scrollbar {
+//     width: toRem(3);
+//     height: toRem(3);
 
-    &-thumb {
-        background-color: var(--skyAzure);
-        border-radius: toRem(2);
-    }
+//     &-thumb {
+//         background-color: var(--skyAzure);
+//         border-radius: toRem(2);
+//     }
 
-    &-track {
-        background-color: #fff;
-    }
-}
+//     &-track {
+//         background-color: #fff;
+//     }
+// }
 
 html,
 body {

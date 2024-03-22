@@ -46,6 +46,7 @@
         "webpack-stream": "^7.0.0"
     },
     "dependencies": {
-        "gulp-gh-pages": "^0.5.4"
+        "gulp-gh-pages": "^0.5.4",
+        "swiper": "^11.0.7"
     }
 }

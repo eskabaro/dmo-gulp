@@ -75,6 +75,23 @@
     line-height: $lineHeight;
 }
 
+// Flex gap
+@mixin flexHorizontalGap($count) {
+    $gap: $count * 4;
+
+    display: flex;
+    flex-direction: row;
+    gap: toRem($gap);
+}
+
+@mixin flexVerticalGap($count) {
+    $gap: $count * 4;
+
+    display: flex;
+    flex-direction: column;
+    gap: toRem($gap);
+}
+
 // Adaptive property (clamp)
 @mixin adaptiveValue(
     $property,

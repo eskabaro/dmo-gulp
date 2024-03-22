@@ -4,7 +4,6 @@
     background-repeat: no-repeat;
     background-position: 100%;
     background-size: auto 80%;
-    // max-width: 1995px;
     max-width: 1835px;
     width: 100%;
     margin: auto;
@@ -37,36 +36,24 @@
         justify-content: space-between;
 
         &__heading {
-            &__line {
+            > h1 {
+                @include font(
+                    toRem(56),
+                    7vw,
+                    toRem(146),
+                    700,
+                    var(--white),
+                    var(--bebasNeue),
+                    100%
+                );
                 display: flex;
-                align-items: center;
-                gap: 25px;
+                flex-direction: column;
 
-                @media all and (max-width: $tablet) {
-                    gap: 15px;
-                }
-
-                &:first-child {
-                    > h1 {
-                        &:nth-child(1) {
-                            color: var(--skyAzure);
-                        }
-                        &:nth-child(2) {
-                            color: var(--springBud);
-                        }
+                > span:first-child {
+                    color: var(--skyAzure);
+                    > span {
+                        color: var(--springBud);
                     }
-                }
-
-                > h1 {
-                    @include font(
-                        toRem(56),
-                        7vw,
-                        toRem(146),
-                        700,
-                        var(--white),
-                        var(--bebasNeue),
-                        100%
-                    );
                 }
             }
         }
@@ -103,6 +90,11 @@
             }
         }
     }
+
+    @media all and (max-width: $pc) {
+        background-size: auto 70%;
+        background-position: 110%;
+    }
 }
 
 .info {
@@ -113,7 +105,6 @@
 
     &__list {
         margin-top: toRem(52);
-        // max-width: 60%;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: toRem(29);
@@ -132,7 +123,6 @@
             }
 
             > p {
-                // @include font(toRem(14), 0vw, toRem(14), 400, $opacityText);
                 color: $opacityText;
                 font-size: toRem(14);
                 font-weight: 400;
@@ -145,16 +135,16 @@
         box-shadow: 0 0 0 100vmax var(--midnightNavy);
         clip-path: inset(0 -100vmax);
         padding: toRem(80) 0 toRem(144) 0;
-
-        &__list {
-            max-width: none;
-        }
     }
 
-    @media all and (max-width: 1440px) {
+    @media all and (min-width: $tablet) and (max-width: 1440px) {
+        > h2 {
+            max-width: 30%;
+        }
+
         &__list {
             gap: 20px;
-            // max-width: none;
+            max-width: 50%;
         }
     }
 }
