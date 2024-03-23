@@ -114,11 +114,18 @@
         }
 
         @media all and (max-width: $tablet) {
+            margin-top: toRem(32);
+
             > span {
                 width: toRem(12);
                 height: toRem(12);
             }
         }
+    }
+
+    @media all and (max-width: $tablet) {
+        @include flexVerticalGap(15);
+        padding: toRem(80) 0 toRem(52) 0;
     }
 }
 
@@ -132,6 +139,9 @@
         background: linear-gradient(
             180deg,
             rgba(33, 33, 33, 0) 0%,
+            rgba(33, 33, 33, 0.45) 27%,
+            rgba(33, 33, 33, 0.55) 34%,
+            rgba(33, 33, 33, 0.75) 52%,
             rgba(33, 33, 33, 1) 100%
         );
         width: 100%;
@@ -139,10 +149,9 @@
         position: absolute;
         height: 100%;
         color: white;
-        transition: padding 0.2s ease;
         padding: toRem(24) toRem(32);
         border-radius: toRem(18);
-        transition: all 0.2s ease;
+        transition: all 650ms ease;
 
         > h3 {
             @include font(toRem(26), 2.5vw, toRem(32), 500, var(--white), 122%);
@@ -168,7 +177,7 @@
 
         @media all and (max-width: $mobile) {
             height: auto;
-            top: toRem(9);
+            // top: toRem(9);
             right: toRem(9);
             left: toRem(9);
             bottom: 0;
