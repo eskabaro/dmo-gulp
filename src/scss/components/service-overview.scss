@@ -35,22 +35,50 @@
     }
 
     &__swiper {
-        // width: 400px;
-        @include adaptiveValue("width", 400, 310, 70300);
+        width: em(400);
         overflow: visible;
         margin: auto;
-        padding-top: 16px;
+        padding-top: toRem(16);
+
+        @media all and (max-width: 1700px) {
+            width: em(380);
+        }
+
+        @media all and (max-width: 1440px) {
+            width: em(360);
+        }
+
+        @media all and (max-width: 1300px) {
+            width: em(340);
+        }
+
+        @media all and (max-width: $pc) {
+            width: em(320);
+        }
+
+        @media all and (max-width: $mobile) {
+            width: em(328);
+            > .swiper-wrapper {
+                > .swiper-slide {
+                    width: fit-content;
+                    padding: toRem(9);
+                    transform: scale(1) !important;
+                }
+            }
+        }
 
         > .swiper-wrapper {
             display: flex;
             align-items: center;
 
             > .swiper-slide {
+                overflow: hidden;
+                padding-bottom: 0;
+                padding-block: 0;
                 transition: all 0.2s ease;
                 display: flex;
                 transform: scale(0.82);
-                border-radius: toRem(20);
-                // overflow: hidden;
+                border-radius: toRem(18);
 
                 &.active {
                     transform: scale(1);
@@ -69,8 +97,8 @@
         justify-content: center;
 
         > span {
-            width: 16px;
-            height: 16px;
+            width: toRem(16);
+            height: toRem(16);
             opacity: 1;
             background-color: var(--midnightIndigo);
 
@@ -81,8 +109,8 @@
 
         @media all and (max-width: $tablet) {
             > span {
-                width: 12px;
-                height: 12px;
+                width: toRem(12);
+                height: toRem(12);
             }
         }
     }
@@ -90,37 +118,38 @@
 
 .slide {
     position: relative;
-
-    &.active .slide__content {
-        // padding: 32px;
-
-        > ul {
-            // height: 100px;
-        }
-    }
+    overflow: hidden;
 
     &__content {
-        @include flexVerticalGap(6);
-        padding: 32px;
-        overflow: hidden;
-        box-sizing: border-box;
-        position: absolute;
-        width: 100%;
-        color: white;
-        transition: padding 0.2s ease;
-        bottom: 0;
+        @include flexVerticalGap(5);
+        justify-content: flex-end;
         background: linear-gradient(
             180deg,
             rgba(33, 33, 33, 0) 0%,
             rgba(33, 33, 33, 1) 100%
         );
+        width: 100%;
+        box-sizing: border-box;
+        position: absolute;
+        height: 100%;
+        color: white;
+        transition: padding 0.2s ease;
+        padding: toRem(24) toRem(32);
+        border-radius: toRem(18);
+        transition: all 0.2s ease;
 
         > h3 {
-            @include font(toRem(26), 4vw, toRem(32), 500, var(--white), 122%);
+            @include font(toRem(26), 2.5vw, toRem(32), 500, var(--white), 122%);
         }
 
         > ul {
             transition: height 0.2s ease;
+            overflow: auto;
+            border: toRem(18);
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             > li {
                 list-style: inside;
@@ -131,8 +160,17 @@
             }
         }
 
-        @media all and (max-width: $tablet) {
-            padding: 24px;
+        @media all and (max-width: $mobile) {
+            height: auto;
+            top: toRem(9);
+            right: toRem(9);
+            left: toRem(9);
+            bottom: 0;
+            width: auto;
+
+            > ul {
+                display: none;
+            }
         }
     }
 }

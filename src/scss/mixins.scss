@@ -97,7 +97,7 @@
     $property,
     $startSize,
     $minSize,
-    $widthFrom: $containerWidth,
+    $widthFrom: $maxWidthContainer,
     $widthTo: $minWidth,
     $keepSize: 0
 ) {
@@ -125,6 +125,7 @@
     @if ($yIntersection==0) {
         $yIntersection: 0.000001;
     }
+
     $flyValue: #{toRem($yIntersection)}" + " #{$slope * 100}vw;
 
     // Get the property value
