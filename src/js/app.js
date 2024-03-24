@@ -1,9 +1,16 @@
 import * as flsFunctions from "./modules/functions.js";
 import Swiper from "swiper";
-import { Pagination, Autoplay } from "swiper/modules";
+import {
+    Pagination,
+    Autoplay,
+    Mousewheel,
+    Scrollbar,
+    FreeMode,
+} from "swiper/modules";
 
 flsFunctions.isWebp();
 
+// swiper 1
 const listBox = document.querySelectorAll(".slide");
 
 new Swiper(".service_overview__swiper", {
@@ -36,6 +43,49 @@ new Swiper(".service_overview__swiper", {
         });
     },
 });
+
+const bgSlider = document.querySelector("#news_bg");
+
+// const sizeWindowWidth = () => {
+//     return window.innerWidth >= 992;
+// };
+
+// window.addEventListener("resize", () => {
+//     const isVertical = sizeWindowWidth();
+//     initializeSwiper(isVertical);
+// });
+
+// function initializeSwiper(isVertical) {
+new Swiper(".swiper_news", {
+    modules: [Mousewheel, Scrollbar],
+    direction: "vertical",
+    slidesPerView: "auto",
+    freeMode: true,
+    scrollbar: {
+        enabled: true,
+        el: ".swiper-scrollbar",
+        draggable: true,
+        snapOnRelease: false,
+        dragSize: "auto",
+    },
+    simulateTouch: false,
+    mousewheel: {
+        enabled: false,
+    },
+    // pagination: {
+    //     el: ".swiper_news_pagination",
+    //     enabled: isVertical,
+    //     clickable: true,
+    // },
+    onAny(arg, ...props) {
+        bgSlider.style.backgroundPositionX = `${props[0].translate / 5}%`;
+    },
+});
+// }
+
+// initializeSwiper(sizeWindowWidth());
+
+// ===========
 
 const elems = document.querySelectorAll(".count");
 

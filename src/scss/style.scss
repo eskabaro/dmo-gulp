@@ -5,6 +5,7 @@
 @import "./widgets/header.scss";
 @import "./components/preview.scss";
 @import "./components/service-overview.scss";
+@import "./components/news-slider.scss";
 @import "./widgets/footer.scss";
 
 // fonts
@@ -24,15 +25,23 @@
     --charcoalBlack: #151515;
     --midnightIndigo: rgba(52, 56, 78, 0.1);
     --charcoalGray: #5b5b5b;
+    --lightSilver: #f4f4f4;
     --white: #ffffff;
     --springLime: #92c53e;
     --skyAzure: #3f97eb;
+    --aquaSky: #02a1d3;
     --springBud: #93c246;
     --electricSkyBlue: #02c2ff;
 
     --paddingContainer: 80px;
     --paddingMinusContainer: -30px;
     --headerHeight: 56px;
+
+    // sliders
+    --swiper-scrollbar-size: 10px;
+    --swiper-scrollbar-bg-color: #d9d9d9;
+    --swiper-scrollbar-drag-bg-color: var(--electricSkyBlue);
+    --swiper-scrollbar-sides-offset: 40%;
 
     @media (max-width: $mobile) {
         --fontSize: 14px;
