@@ -30,8 +30,25 @@
     &__slider {
         height: 100%;
         max-width: em(680);
+
         > .swiper_news {
+            overflow: visible;
+            padding-block: 20px;
             max-height: em(1000);
+        }
+
+        @media all and (max-width: $tablet) {
+            max-width: em(580);
+            margin: auto;
+            width: 100%;
+        }
+
+        @media all and (max-width: $mobile) {
+            max-width: em(400);
+        }
+
+        @media all and (max-width: $mobileSmall) {
+            max-width: em(340);
         }
     }
 
@@ -78,10 +95,42 @@
         @media all and (max-width: $pc) {
             padding-right: toRem(32);
         }
+
+        @media all and (max-width: $tablet) {
+            @include flexVerticalGap(8);
+            padding-right: 0;
+            max-width: none;
+            padding-bottom: toRem(26);
+        }
+
+        @media all and (max-width: $mobile) {
+            > button {
+                width: 100%;
+            }
+        }
     }
 
     @media all and (max-width: $tablet) {
+        gap: toRem(4);
         flex-direction: column;
+    }
+}
+
+.swiper_news {
+    &__pagination {
+        @include flexHorizontalGap(0);
+        justify-content: center;
+        margin-top: toRem(20);
+
+        > span {
+            width: toRem(12);
+            height: toRem(12);
+            background-color: rgba(52, 56, 78, 0.4);
+
+            &.swiper-pagination-bullet-active {
+                background-color: var(--electricSkyBlue);
+            }
+        }
     }
 }
 
@@ -90,7 +139,7 @@
     background-color: var(--white);
     padding: toRem(24) toRem(28);
     border-radius: toRem(20);
-    margin-block: toRem(20);
+    height: 100%;
 
     &__image > img {
         max-width: 100%;
@@ -125,5 +174,25 @@
         font-weight: 400;
         color: var(--charcoalBlack);
         line-height: 168%;
+    }
+
+    @media all and (max-width: $tablet) {
+        @include flexVerticalGap(2);
+
+        > header {
+            padding-top: toRem(8);
+        }
+
+        > p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    @media all and (max-width: $mobile) {
+        padding: toRem(12) toRem(14);
     }
 }
