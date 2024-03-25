@@ -28,19 +28,10 @@
     justify-content: space-between;
 
     &__slider {
-        max-width: em(680);
-        max-height: em(1000);
         height: 100%;
-
+        max-width: em(680);
         > .swiper_news {
-            > .swiper-wrapper {
-                flex-direction: row;
-                > .swiper-slide {
-                    &.swiper-slide-active {
-                        height: auto;
-                    }
-                }
-            }
+            max-height: em(1000);
         }
     }
 

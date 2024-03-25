@@ -59,8 +59,8 @@ const bgSlider = document.querySelector("#news_bg");
 new Swiper(".swiper_news", {
     modules: [Mousewheel, Scrollbar],
     direction: "vertical",
-    slidesPerView: 1,
-    // freeMode: true,
+    slidesPerView: "auto",
+    freeMode: true,
     scrollbar: {
         enabled: true,
         el: ".swiper-scrollbar",
