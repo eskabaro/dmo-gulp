@@ -76,14 +76,14 @@
                 overflow: hidden;
                 transition: all 0.2s ease;
                 display: flex;
-                transform: scale(0.82);
                 // width: 328px;
                 border-radius: toRem(18);
+                transform: scale(0.82);
                 // > .wrapper {
 
                 &.active {
                     transform: scale(1);
-                    width: 100%;
+                    // width: 100%;
                 }
 
                 > picture {

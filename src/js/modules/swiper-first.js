@@ -9,7 +9,7 @@ new Swiper(".service_overview__swiper", {
     initialSlide: 5,
     loop: true,
     autoplay: {
-        delay: 3500,
+        delay: 3000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
     },
