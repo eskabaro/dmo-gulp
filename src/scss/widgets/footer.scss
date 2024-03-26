@@ -1,165 +1,169 @@
 .footer {
-    // background-color: var(--midnightBlack);
-    color: var(--white);
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
-    background-color: rgba(12, 13, 17, 1);
+  // background-color: var(--midnightBlack);
+  color: var(--white);
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(12, 13, 17, 1);
 
-    &__container {
-        @include container();
-        display: flex;
-        justify-content: space-between;
-        height: toRem(36);
-        justify-content: space-between;
-        align-items: center;
+  @media (max-width: $mobile) {
+    position: static;
+  }
 
-        > .copyright {
-            @include font(toRem(12), 3vw, toRem(16), 400, var(--white));
+  &__container {
+    @include container();
+    display: flex;
+    justify-content: space-between;
+    height: toRem(36);
+    justify-content: space-between;
+    align-items: center;
+
+    > .copyright {
+      @include font(toRem(12), 3vw, toRem(16), 400, var(--white));
+    }
+
+    > .links {
+      @include font(toRem(12), 3vw, toRem(14), 400, var(--white));
+    }
+
+    > .networks {
+      text-align: end;
+      @include flexHorizontalGap(5);
+
+      > a {
+        border-radius: 50%;
+        height: toRem(28);
+        width: toRem(28);
+        position: relative;
+        background-color: rgba(42, 45, 48, 1);
+
+        > picture {
+          // width: toRem(18);
+          // height: toRem(18);
+
+          > img {
+            transition: all 150ms ease;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: toRem(18);
+            height: toRem(18);
+          }
         }
 
-        > .links {
-            @include font(toRem(12), 3vw, toRem(14), 400, var(--white));
+        > img {
+          transition: all 150ms ease;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: toRem(18);
+          height: toRem(18);
         }
 
-        > .networks {
-            text-align: end;
-            @include flexHorizontalGap(5);
+        @media (hover: hover) {
+          &:hover {
+            > picture {
+              // width: toRem(20);
+              // height: toRem(20);
 
-            > a {
-                border-radius: 50%;
-                height: toRem(28);
-                width: toRem(28);
-                position: relative;
-                background-color: rgba(42, 45, 48, 1);
+              > img {
+                width: toRem(20);
+                height: toRem(20);
+              }
+            }
 
-                > picture {
-                    // width: toRem(18);
-                    // height: toRem(18);
+            > img {
+              width: toRem(20);
+              height: toRem(20);
+            }
+          }
+        }
+      }
+    }
 
-                    > img {
-                        transition: all 150ms ease;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: toRem(18);
-                        height: toRem(18);
-                    }
-                }
+    > .logo {
+      display: none;
+    }
+
+    @media all and (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      padding-block: toRem(20);
+      height: auto;
+      flex-direction: column;
+      gap: toRem(8);
+
+      > .copyright {
+        order: 2;
+      }
+
+      > .links {
+        order: 3;
+      }
+
+      > .networks {
+        order: 1;
+        margin-block: toRem(16);
+
+        > a {
+          width: toRem(56);
+          height: toRem(56);
+
+          > picture {
+            // width: toRem(37);
+            // height: toRem(37);
+
+            > img {
+              width: toRem(37);
+              height: toRem(37);
+            }
+          }
+          > img {
+            width: toRem(37);
+            height: toRem(37);
+          }
+
+          @media (hover: hover) {
+            &:hover {
+              > picture {
+                // width: toRem(40);
+                // height: toRem(40);
 
                 > img {
-                    transition: all 150ms ease;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: toRem(18);
-                    height: toRem(18);
+                  width: toRem(40) !important;
+                  height: toRem(40) !important;
                 }
-
-                @media (hover: hover) {
-                    &:hover {
-                        > picture {
-                            // width: toRem(20);
-                            // height: toRem(20);
-
-                            > img {
-                                width: toRem(20);
-                                height: toRem(20);
-                            }
-                        }
-
-                        > img {
-                            width: toRem(20);
-                            height: toRem(20);
-                        }
-                    }
-                }
+              }
+              > img {
+                width: toRem(40) !important;
+                height: toRem(40) !important;
+              }
             }
+          }
+        }
+      }
+
+      > .logo {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        gap: toRem(8);
+
+        > a {
+          margin: auto;
+          display: block;
+          width: fit-content;
+          height: auto;
         }
 
-        > .logo {
-            display: none;
+        > figcaption {
+          font-size: toRem(16);
+          color: var(--white);
+          font-weight: 400;
         }
-
-        @media all and (max-width: $mobile) {
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(4, 1fr);
-            padding-block: toRem(20);
-            height: auto;
-            flex-direction: column;
-            gap: toRem(8);
-
-            > .copyright {
-                order: 2;
-            }
-
-            > .links {
-                order: 3;
-            }
-
-            > .networks {
-                order: 1;
-                margin-block: toRem(16);
-
-                > a {
-                    width: toRem(56);
-                    height: toRem(56);
-
-                    > picture {
-                        // width: toRem(37);
-                        // height: toRem(37);
-
-                        > img {
-                            width: toRem(37);
-                            height: toRem(37);
-                        }
-                    }
-                    > img {
-                        width: toRem(37);
-                        height: toRem(37);
-                    }
-
-                    @media (hover: hover) {
-                        &:hover {
-                            > picture {
-                                // width: toRem(40);
-                                // height: toRem(40);
-
-                                > img {
-                                    width: toRem(40) !important;
-                                    height: toRem(40) !important;
-                                }
-                            }
-                            > img {
-                                width: toRem(40) !important;
-                                height: toRem(40) !important;
-                            }
-                        }
-                    }
-                }
-            }
-
-            > .logo {
-                display: flex;
-                text-align: center;
-                flex-direction: column;
-                gap: toRem(8);
-
-                > a {
-                    margin: auto;
-                    display: block;
-                    width: fit-content;
-                    height: auto;
-                }
-
-                > figcaption {
-                    font-size: toRem(16);
-                    color: var(--white);
-                    font-weight: 400;
-                }
-            }
-        }
+      }
     }
+  }
 }
