@@ -58,6 +58,7 @@
 
         @media all and (max-width: $mobile) {
             width: em(328);
+
             > .swiper-wrapper {
                 > .swiper-slide {
                     width: fit-content;
@@ -76,11 +77,15 @@
                 transition: all 0.2s ease;
                 display: flex;
                 transform: scale(0.82);
+                // width: 328px;
                 border-radius: toRem(18);
+                // > .wrapper {
 
                 &.active {
                     transform: scale(1);
+                    width: 100%;
                 }
+
                 > picture {
                     width: 100%;
 
@@ -94,6 +99,7 @@
                     height: 100%;
                     width: 100%;
                 }
+                // }
             }
         }
     }
@@ -107,6 +113,7 @@
             height: toRem(16);
             opacity: 1;
             background-color: var(--midnightIndigo);
+            transition: all 0.2s ease;
 
             &.swiper-pagination-bullet-active {
                 background-color: var(--electricSkyBlue);
@@ -136,12 +143,20 @@
     &__content {
         @include flexVerticalGap(5);
         justify-content: flex-end;
+        // background: linear-gradient(
+        //     180deg,
+        //     rgba(33, 33, 33, 0) 0%,
+        //     rgba(33, 33, 33, 0.45) 27%,
+        //     rgba(33, 33, 33, 0.55) 34%,
+        //     rgba(33, 33, 33, 0.75) 52%,
+        //     rgba(33, 33, 33, 1) 100%
+        // );
         background: linear-gradient(
             180deg,
             rgba(33, 33, 33, 0) 0%,
-            rgba(33, 33, 33, 0.45) 27%,
-            rgba(33, 33, 33, 0.55) 34%,
-            rgba(33, 33, 33, 0.75) 52%,
+            rgba(33, 33, 33, 0.4822303921568627) 21%,
+            rgba(33, 33, 33, 0.5438550420168067) 26%,
+            rgba(33, 33, 33, 0.7371323529411764) 45%,
             rgba(33, 33, 33, 1) 100%
         );
         width: 100%;
@@ -177,7 +192,6 @@
 
         @media all and (max-width: $mobile) {
             height: auto;
-            // top: toRem(9);
             right: toRem(9);
             left: toRem(9);
             bottom: 0;

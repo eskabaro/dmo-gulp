@@ -1,113 +1,76 @@
 .preview {
     background-color: var(--midnightCharcoal);
-    background-image: url("@img/Group.png");
-    background-repeat: no-repeat;
-    background-position: 100%;
-    background-size: auto 80%;
-    max-width: 1835px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 0 0 100vmax var(--midnightCharcoal);
-    clip-path: inset(0 -100vmax);
 
-    &__mobile_bg {
-        text-align: center;
-        display: none;
-
-        > img {
-            max-width: 100%;
-            height: auto;
-        }
-    }
-
-    &__height {
-        padding-bottom: calc(50% - 56px);
-    }
-
-    &__content {
-        @include container();
-        width: 100%;
-        margin-top: toRem(120);
-        margin-bottom: toRem(110);
+    &__container {
+        margin: auto;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        &__heading {
-            > h1 {
-                @include font(
-                    toRem(56),
-                    7vw,
-                    toRem(146),
-                    700,
-                    var(--white),
-                    var(--bebasNeue),
-                    100%
-                );
-                display: flex;
-                flex-direction: column;
-
-                > span:first-child {
-                    color: var(--skyAzure);
-                    > span {
-                        color: var(--springBud);
-                    }
-                }
-            }
-        }
-
-        &__paragraph {
-            margin-top: toRem(40);
-            margin-bottom: toRem(75);
-            max-width: 50%;
-            line-height: 108%;
-            @include font(toRem(16), 1vw, toRem(26), 400, $opacityText, null);
-        }
-    }
-
-    @media all and (max-width: $tablet) {
-        background-image: none !important;
-        flex-direction: column;
+        justify-content: center;
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-size: auto 80%;
+        background-image: url("@img/Group.png");
+        max-width: em(1835);
+        padding-inline: $paddingContainer;
 
         &__mobile_bg {
-            display: block;
-        }
-
-        &__height {
+            text-align: center;
             display: none;
+
+            > picture {
+                > img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            > img {
+                max-width: 100%;
+                height: auto;
+            }
         }
 
         &__content {
-            margin-top: toRem(33);
-            margin-bottom: 0;
+            @include container();
+            @include flexVerticalGap(10);
+            width: 100%;
+            padding: toRem(120) 0 toRem(110) 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-            &__paragraph {
-                max-width: none;
-                margin-top: toRem(25);
-                margin-bottom: toRem(99);
+        @media all and (max-width: $tablet) {
+            background-image: none !important;
+            flex-direction: column;
+
+            &__mobile_bg {
+                display: block;
+            }
+
+            &__content {
+                padding: toRem(33) 0 0 0;
             }
         }
-    }
 
-    @media all and (max-width: $pc) {
-        background-size: auto 70%;
-        background-position: 110%;
+        @media all and (max-width: $pc) {
+            background-size: auto 70%;
+            background-position: 110%;
+        }
     }
 }
 
 .info {
+    @include flexVerticalGap(13);
+
     > h2 {
         @include font(toRem(36), 2.5vw, toRem(55), 400, var(--white));
         max-width: 80%;
     }
 
     &__list {
-        margin-top: toRem(52);
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: toRem(29);
+        grid-template-columns: repeat(auto-fill, minmax(toRem(150), 1fr));
+        gap: toRem(28);
 
         &__item {
             height: fit-content;
@@ -143,8 +106,61 @@
         }
 
         &__list {
-            gap: 20px;
+            gap: toRem(20);
             max-width: 50%;
+        }
+    }
+}
+
+.content {
+    &__heading {
+        > h1 {
+            @include font(
+                toRem(56),
+                7vw,
+                toRem(146),
+                700,
+                var(--white),
+                var(--bebasNeue),
+                100%
+            );
+            display: flex;
+            flex-direction: column;
+
+            > span:first-child {
+                color: var(--skyAzure);
+
+                > span {
+                    color: var(--springBud);
+                }
+            }
+        }
+    }
+
+    &__paragraph {
+        margin-bottom: toRem(36);
+        max-width: 50%;
+        line-height: 108%;
+        @include font(toRem(16), 1vw, toRem(26), 400, $opacityText, null);
+    }
+
+    @media all and (max-width: $tablet) {
+        &__paragraph {
+            max-width: none !important;
+            // margin-top: toRem(25);
+            margin-bottom: toRem(8);
+        }
+    }
+
+    @media all and (max-width: em(1500)) {
+        &__paragraph {
+            max-width: 35%;
+        }
+    }
+
+    @media all and (max-width: em(1300)) {
+        &__paragraph {
+            max-width: 30%;
         }
     }
 }

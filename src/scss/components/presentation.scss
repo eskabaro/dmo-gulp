@@ -1,0 +1,36 @@
+.presentation {
+    background-color: var(--midnightCharcoal);
+    color: var(--white);
+
+    &__container {
+        @include container();
+        @include flexHorizontalGap(16);
+    }
+}
+
+.container {
+    &__slider {
+    }
+    &__heading {
+        @include flexVerticalGap(10);
+
+        > h2 {
+            @include font(toRem(36), 4vw, toRem(72), 600, var(--white));
+        }
+
+        > p {
+            @include font(
+                toRem(16),
+                4vw,
+                toRem(18),
+                400,
+                var(--pureWhite),
+                null,
+                150%
+            );
+        }
+
+        &__btn_box {
+        }
+    }
+}

@@ -14,6 +14,7 @@ new Swiper(".service_overview__swiper", {
         pauseOnMouseEnter: true,
     },
     speed: 650,
+    // spaceBetween: 20,
     slidesPerView: "auto",
     slideToClickedSlide: true,
     slideActiveClass: "active",

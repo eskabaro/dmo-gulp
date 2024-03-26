@@ -6,6 +6,7 @@
 @import "./components/preview.scss";
 @import "./components/service-overview.scss";
 @import "./components/news-slider.scss";
+@import "./components/presentation.scss";
 @import "./widgets/footer.scss";
 
 // fonts
@@ -25,6 +26,7 @@
     --charcoalBlack: #151515;
     --midnightIndigo: rgba(52, 56, 78, 0.1);
     --darkMidnightIndigo: rgba(52, 56, 78, 10%);
+    --pureWhite: rgba(255, 255, 255, 0.5);
     --charcoalGray: #5b5b5b;
     --lightSilver: #f4f4f4;
     --white: #ffffff;
@@ -37,6 +39,7 @@
     --paddingContainer: 80px;
     --paddingMinusContainer: -30px;
     --headerHeight: 56px;
+    --footerHeight: toRem(36);
 
     // sliders
     --swiper-scrollbar-size: 10px;

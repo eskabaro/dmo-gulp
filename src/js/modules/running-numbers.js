@@ -13,7 +13,7 @@ const outNum = (num, elem) => {
 
         if (n == num) clearInterval(interval);
 
-        l.innerHTML = n;
+        l.innerHTML = n >= 7000 ? `${n}+` : n;
     }, t);
 };
 
