@@ -1,7 +1,9 @@
 .footer {
     // background-color: var(--midnightBlack);
     color: var(--white);
-
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
     background-color: rgba(12, 13, 17, 1);
 
     &__container {
@@ -46,6 +48,16 @@
                     }
                 }
 
+                > img {
+                    transition: all 150ms ease;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: toRem(18);
+                    height: toRem(18);
+                }
+
                 @media (hover: hover) {
                     &:hover {
                         > picture {
@@ -56,6 +68,11 @@
                                 width: toRem(20);
                                 height: toRem(20);
                             }
+                        }
+
+                        > img {
+                            width: toRem(20);
+                            height: toRem(20);
                         }
                     }
                 }
@@ -99,6 +116,10 @@
                             height: toRem(37);
                         }
                     }
+                    > img {
+                        width: toRem(37);
+                        height: toRem(37);
+                    }
 
                     @media (hover: hover) {
                         &:hover {
@@ -110,6 +131,10 @@
                                     width: toRem(40) !important;
                                     height: toRem(40) !important;
                                 }
+                            }
+                            > img {
+                                width: toRem(40) !important;
+                                height: toRem(40) !important;
                             }
                         }
                     }

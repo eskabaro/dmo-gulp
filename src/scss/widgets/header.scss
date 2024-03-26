@@ -1,6 +1,9 @@
 .header {
     background-color: var(--midnightBlack);
     padding-inline: $paddingContainer;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 
     &__container {
         @include container();
@@ -75,6 +78,7 @@
     > span {
         transition: transform 150ms ease;
     }
+
     @media (hover: hover) {
         &:hover {
             > span {
@@ -108,7 +112,6 @@
 
         &__sign_in {
             @include button(transparent, 0, 0, null, $opacityText);
-            @include hoverBtn;
             display: flex;
             align-items: center;
             gap: toRem(8);

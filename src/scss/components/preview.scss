@@ -7,10 +7,14 @@
         justify-content: center;
         background-repeat: no-repeat;
         background-position: 100%;
-        background-size: auto 80%;
-        background-image: url("@img/Group.png");
+        background-size: auto 100%;
+        background-image: url("@img/earth-big.png");
         max-width: em(1835);
         padding-inline: $paddingContainer;
+
+        @media all and (max-width: em(1650)) {
+            background-size: auto 85%;
+        }
 
         &__mobile_bg {
             text-align: center;
@@ -54,7 +58,7 @@
 
         @media all and (max-width: $pc) {
             background-size: auto 70%;
-            background-position: 110%;
+            // background-position: 110%;
         }
     }
 }
@@ -78,7 +82,7 @@
             > span {
                 @include font(
                     toRem(40),
-                    1.5vw,
+                    3.3vw,
                     toRem(52),
                     500,
                     var(--electricSkyBlue)
@@ -100,14 +104,23 @@
         padding: toRem(80) 0 toRem(144) 0;
     }
 
-    @media all and (min-width: $tablet) and (max-width: 1440px) {
+    @media all and (max-width: $pc) {
         > h2 {
             max-width: 30%;
         }
 
         &__list {
-            gap: toRem(20);
             max-width: 50%;
+        }
+    }
+
+    @media all and (max-width: $tablet) {
+        > h2 {
+            max-width: none;
+        }
+
+        &__list {
+            max-width: none;
         }
     }
 }
@@ -115,9 +128,10 @@
 .content {
     &__heading {
         > h1 {
+            // background-color: aqua;
             @include font(
                 toRem(56),
-                7vw,
+                8.3vw,
                 toRem(146),
                 700,
                 var(--white),
@@ -141,7 +155,7 @@
         margin-bottom: toRem(36);
         max-width: 50%;
         line-height: 108%;
-        @include font(toRem(16), 1vw, toRem(26), 400, $opacityText, null);
+        @include font(toRem(16), 1.5vw, toRem(26), 400, $opacityText, null);
     }
 
     @media all and (max-width: $tablet) {
