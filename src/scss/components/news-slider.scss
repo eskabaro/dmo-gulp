@@ -13,6 +13,7 @@
             position: absolute;
             right: toRem(40) !important;
             width: toRem(10);
+            z-index: 0 !important;
         }
 
         @media all and (max-width: $pc) {

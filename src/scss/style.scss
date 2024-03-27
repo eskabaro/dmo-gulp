@@ -7,6 +7,7 @@
 @import "./components/service-overview.scss";
 @import "./components/news-slider.scss";
 @import "./components/presentation.scss";
+@import "./components/form.scss";
 @import "./widgets/footer.scss";
 
 // fonts
@@ -24,9 +25,11 @@
     --midnightNavy: #12131c;
     --midnightCharcoal: #151721;
     --charcoalBlack: #151515;
+    --black: #000000;
     --midnightIndigo: rgba(52, 56, 78, 0.1);
     --darkMidnightIndigo: rgba(52, 56, 78, 10%);
     --pureWhite: rgba(255, 255, 255, 0.5);
+    --snowWhite: rgba(248, 248, 248, 1);
     --charcoalGray: #5b5b5b;
     --lightSilver: #f4f4f4;
     --white: #ffffff;

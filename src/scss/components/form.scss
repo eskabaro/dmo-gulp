@@ -1,0 +1,77 @@
+.form {
+    padding-block: 120px;
+    background-color: var(--snowWhite);
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        @include container();
+        padding: toRem(44) toRem(36) toRem(58) toRem(80);
+        width: 100%;
+        margin-inline: $paddingContainer;
+        border-radius: toRem(20);
+        background-color: var(--white);
+
+        &__form {
+        }
+
+        &__accordions {
+        }
+    }
+}
+
+.form_box {
+    @include flexVerticalGap(15);
+
+    > h2 {
+        @include font(toRem(36), 3vw, toRem(60), 700, var(--black));
+    }
+
+    &__select_wrapper {
+        > .heading {
+            @include flexHorizontalGap(2);
+            align-items: center;
+
+            > h3 {
+                @include font(toRem(14), 3vw, toRem(22), 600, var(--black));
+            }
+        }
+
+        > select {
+            @include font(toRem(16), 3vw, toRem(18), 500, var(--black));
+            padding: toRem(16) toRem(16.5);
+            max-width: em(408);
+            width: 100%;
+            outline: none;
+            border-radius: toRem(8);
+            border: toRem(1) solid rgba(207, 207, 207, 1);
+            appearance: none;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                // top: 50%;
+                // transform: translateY(-50%);
+                right: toRem(16);
+                z-index: 123123;
+                background-color: aqua;
+                width: toRem(16);
+                height: toRem(16);
+            }
+
+            &:focus-within {
+                border: toRem(1) solid rgba(2, 161, 211, 1);
+            }
+
+            > option {
+                font-size: toRem(14);
+                font-weight: 400;
+                color: var(--black);
+            }
+        }
+    }
+}
+
+.accordions_box {
+}

@@ -7,7 +7,7 @@ new Swiper(".service_overview__swiper", {
     modules: [Pagination, Autoplay],
     loopAdditionalSlides: 2,
     initialSlide: 5,
-    loop: true,
+    // loop: true,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,

@@ -76,14 +76,20 @@
                 overflow: hidden;
                 transition: all 0.2s ease;
                 display: flex;
-                // width: 328px;
+
                 border-radius: toRem(18);
                 transform: scale(0.82);
-                // > .wrapper {
 
                 &.active {
                     transform: scale(1);
-                    // width: 100%;
+                }
+
+                &.swiper-slide-prev {
+                    margin-right: 0;
+                }
+
+                &.swiper-slide-next {
+                    margin-left: 0;
                 }
 
                 > picture {
@@ -99,7 +105,24 @@
                     height: 100%;
                     width: 100%;
                 }
-                // }
+            }
+
+            @media all and (min-width: $mobile) {
+                .swiper-slide {
+                    margin-inline: toRem(-25);
+
+                    &.active {
+                        margin-inline: toRem(-17);
+                    }
+
+                    &.swiper-slide-prev {
+                        margin-right: 0;
+                    }
+
+                    &.swiper-slide-next {
+                        margin-left: 0;
+                    }
+                }
             }
         }
     }
