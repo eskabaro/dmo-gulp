@@ -78,22 +78,6 @@
 
         &__item {
             height: fit-content;
-
-            > span {
-                @include font(
-                    toRem(40),
-                    3.3vw,
-                    toRem(52),
-                    500,
-                    var(--electricSkyBlue)
-                );
-            }
-
-            > p {
-                color: $opacityText;
-                font-size: toRem(14);
-                font-weight: 400;
-            }
         }
     }
 
@@ -122,6 +106,57 @@
         &__list {
             max-width: none;
         }
+    }
+}
+
+.item {
+    @include flexVerticalGap(3);
+
+    &__wrapper {
+        position: relative;
+        height: toRem(40);
+        overflow: hidden;
+
+        > span {
+            position: absolute;
+            top: 50%;
+            height: toRem(40);
+            display: flex;
+            align-items: center;
+            left: 0;
+            transform: translateY(-50%);
+            @include font(
+                toRem(40),
+                3.3vw,
+                toRem(52),
+                500,
+                var(--electricSkyBlue)
+            );
+
+            &.active {
+                animation: slidein 50ms ease-out infinite;
+            }
+        }
+    }
+
+    @keyframes slidein {
+        from {
+            top: toRem(-70);
+        }
+
+        to {
+            top: toRem(70);
+        }
+    }
+
+    > p {
+        color: $opacityText;
+        font-size: toRem(14);
+        font-weight: 400;
+    }
+
+    @media all and (max-width: $tablet) {
+        gap: toRem(8);
     }
 }
 
