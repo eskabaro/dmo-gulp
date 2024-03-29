@@ -74,7 +74,7 @@
 
     &__list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(toRem(150), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(toRem(155), 1fr));
         gap: toRem(28);
 
         &__item {
@@ -134,7 +134,7 @@
             );
 
             &.active {
-                animation: slidein 50ms ease-out infinite;
+                animation: slidein 50ms ease-in-out infinite;
             }
         }
     }
