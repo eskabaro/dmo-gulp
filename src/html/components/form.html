@@ -1,18 +1,165 @@
-<section class="form">
+<section class="form scroll_section">
     <div class="form__container">
         <div class="form__container__form form_box">
             <h2>Packages and Modules</h2>
             <div class="form_box__select_wrapper">
                 <div class="heading">
-                    <img src="@img/form/global.png" alt="global" />
+                    <img src="@img/form/global.svg" alt="global" />
                     <h3>1. Select your region(s):</h3>
                 </div>
-                <select name="" id="">
-                    <option value="">Global</option>
-                    <option value="">Global</option>
-                </select>
+                <div class="select_box">
+                    <div class="select_box__dropdown" id="dropdown">
+                        <span class="selected_display" id="destination"
+                            >Global</span
+                        >
+                        <img
+                            class="arrow"
+                            src="@img/svg/dropdown.svg"
+                            alt="dropdown-arrow"
+                        />
+                        <ul class="dropdown">
+                            <div id="regions" class="scroll">
+                                <label id="item" class="dropdown-option">
+                                    <input
+                                        type="checkbox"
+                                        name="dropdown-group"
+                                        value="Selection 1"
+                                    />
+                                    Selection One
+                                </label>
+                                <label id="item" class="dropdown-option">
+                                    <input
+                                        type="checkbox"
+                                        name="dropdown-group"
+                                        value="Selection 1"
+                                    />
+                                    Selection One
+                                </label>
+                                <label id="item" class="dropdown-option">
+                                    <input
+                                        type="checkbox"
+                                        name="dropdown-group"
+                                        value="Selection 1"
+                                    />
+                                    Selection One
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form_box__select_wrapper">
+                <div class="heading">
+                    <img src="@img/form/cube.svg" alt="cube" />
+                    <h3>2. Select you package:</h3>
+                </div>
+                <div class="select_box">
+                    <div class="select_box__dropdown" id="dropdown">
+                        <span class="selected_display" id="destination"
+                            >Global</span
+                        >
+                        <img
+                            class="arrow"
+                            src="@img/svg/dropdown.svg"
+                            alt="dropdown-arrow"
+                        />
+                        <ul class="dropdown">
+                            <div id="package" class="scroll">
+                                <li id="item" class="item">Option 1</li>
+                                <li id="item" class="item">Option 2</li>
+                                <li id="item" class="item">Option 3</li>
+                                <li id="item" class="item">Option 4</li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form_box__select_wrapper">
+                <div class="heading">
+                    <img src="@img/form/licence.svg" alt="licence" />
+                    <h3>3. Select the number of licences:</h3>
+                </div>
+                <div class="select_box">
+                    <div class="select_box__dropdown" id="dropdown">
+                        <span class="selected_display" id="destination"
+                            >Global</span
+                        >
+                        <img
+                            class="arrow"
+                            src="@img/svg/dropdown.svg"
+                            alt="dropdown-arrow"
+                        />
+                        <ul class="dropdown">
+                            <div id="licences" class="scroll">
+                                <li id="item" class="item">Option 1</li>
+                                <li id="item" class="item">Option 2</li>
+                                <li id="item" class="item">Option 3</li>
+                                <li id="item" class="item">Option 4</li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="form__container__accordions accordions_box"></div>
+        <div class="form__container__accordions accordions_box">
+            <div class="accordions_box__scroll">
+                <details class="accordions_box__scroll__accordion">
+                    <summary>
+                        <div class="heading">
+                            <img
+                                src="@img/form/ownership.svg"
+                                alt="ownership"
+                            />
+                            Mine / Project Overview
+                            <img
+                                class="chevron"
+                                src="@img/svg/chevron.svg"
+                                alt="chevron"
+                            />
+                        </div>
+                        <img src="@img/form/check.svg" alt="chevron" />
+                    </summary>
+                    <ul>
+                        <li>Geographic Location</li>
+                        <li>Mine Office Address</li>
+                        <li>Development Stage</li>
+                        <li>Mine Type</li>
+                        <li>Commodities</li>
+                        <li>Life of Mine</li>
+                    </ul>
+                </details>
+                <details class="accordions_box__scroll__accordion">
+                    <summary>
+                        <div class="heading">
+                            <img
+                                src="@img/form/ownership.svg"
+                                alt="ownership"
+                            />
+                            Mine / Project Overview
+                            <img
+                                class="chevron"
+                                src="@img/svg/chevron.svg"
+                                alt="chevron"
+                            />
+                        </div>
+                        <img src="@img/form/check.svg" alt="chevron" />
+                    </summary>
+                    <ul>
+                        <li>Geographic Location</li>
+                        <li>Mine Office Address</li>
+                        <li>Development Stage</li>
+                        <li>Mine Type</li>
+                        <li>Commodities</li>
+                        <li>Life of Mine</li>
+                    </ul>
+                </details>
+            </div>
+            <div class="accordions_box__submit">
+                <span>Total: $5,600</span>
+                <button id="form-submit-btn" type="submit">
+                    Continue to billing
+                </button>
+            </div>
+        </div>
     </div>
 </section>

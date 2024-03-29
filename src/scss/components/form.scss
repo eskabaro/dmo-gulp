@@ -6,6 +6,8 @@
 
     &__container {
         @include container();
+        @include flexHorizontalGap(10);
+        justify-content: space-between;
         padding: toRem(44) toRem(36) toRem(58) toRem(80);
         width: 100%;
         margin-inline: $paddingContainer;
@@ -18,6 +20,15 @@
         &__accordions {
         }
     }
+
+    @media all and (max-width: $tablet) {
+        background-color: var(--white);
+
+        &__container {
+            padding: 0;
+            flex-direction: column;
+        }
+    }
 }
 
 .form_box {
@@ -25,53 +36,183 @@
 
     > h2 {
         @include font(toRem(36), 3vw, toRem(60), 700, var(--black));
+        max-width: toRem(428);
     }
 
     &__select_wrapper {
+        @include flexVerticalGap(5);
+
         > .heading {
             @include flexHorizontalGap(2);
             align-items: center;
 
             > h3 {
                 @include font(toRem(14), 3vw, toRem(22), 600, var(--black));
-            }
-        }
-
-        > select {
-            @include font(toRem(16), 3vw, toRem(18), 500, var(--black));
-            padding: toRem(16) toRem(16.5);
-            max-width: em(408);
-            width: 100%;
-            outline: none;
-            border-radius: toRem(8);
-            border: toRem(1) solid rgba(207, 207, 207, 1);
-            appearance: none;
-            position: relative;
-
-            &::after {
-                content: "";
-                position: absolute;
-                // top: 50%;
-                // transform: translateY(-50%);
-                right: toRem(16);
-                z-index: 123123;
-                background-color: aqua;
-                width: toRem(16);
-                height: toRem(16);
-            }
-
-            &:focus-within {
-                border: toRem(1) solid rgba(2, 161, 211, 1);
-            }
-
-            > option {
-                font-size: toRem(14);
-                font-weight: 400;
-                color: var(--black);
+                text-wrap: nowrap;
             }
         }
     }
 }
 
+.select_box {
+    &__dropdown {
+        position: relative;
+        max-width: em(408);
+        cursor: pointer;
+        border: toRem(1) solid rgba(207, 207, 207, 1);
+        border-radius: toRem(8);
+        padding: toRem(16) toRem(16.5);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &.active {
+            > .arrow {
+                transform: rotate(-180deg);
+            }
+
+            > .dropdown {
+                display: flex;
+            }
+        }
+
+        > .arrow {
+            transition: all 0.2s ease-in-out;
+        }
+
+        > .selected_display {
+            @include font(toRem(16), 3vw, toRem(18), 500, var(--black));
+        }
+
+        > .dropdown {
+            @include flexVerticalGap(1);
+            display: none;
+            background-color: var(--white);
+            position: absolute;
+            right: 0;
+            left: 0;
+            border-radius: toRem(8);
+            box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.15);
+            padding: toRem(16) 0 toRem(16) toRem(6);
+            z-index: 20;
+
+            > .scroll {
+                max-height: toRem(240);
+                overflow: auto;
+
+                &::-webkit-scrollbar {
+                    width: toRem(2);
+                }
+
+                > li {
+                    font-size: toRem(14);
+                    font-weight: 400;
+                    padding: toRem(1.5) 0 toRem(1.5) toRem(8);
+                    margin-right: toRem(8);
+                    border-radius: toRem(6);
+
+                    @media (hover: hover) {
+                        &:hover {
+                            background-color: rgba(207, 207, 207, 0.5);
+                        }
+                    }
+                }
+            }
+        }
+
+        @media all and (max-width: $tablet) {
+            max-width: none;
+        }
+    }
+}
+
 .accordions_box {
+    @include flexVerticalGap(10);
+    max-width: em(690);
+    width: 100%;
+
+    &__scroll {
+        @include flexVerticalGap(3);
+        max-height: 590px;
+        overflow: auto;
+
+        &__accordion {
+            // min-height: 50px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            transition-timing-function: linear;
+            overflow: hidden;
+            border-radius: toRem(8);
+            background-color: rgba(250, 250, 250, 1);
+
+            &[open] {
+                & summary {
+                    > .heading {
+                        > .chevron {
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
+
+            & summary {
+                position: relative;
+                padding: toRem(16) toRem(14);
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                > .heading {
+                    @include flexHorizontalGap(2);
+
+                    > img:nth-child(1) {
+                        margin-right: toRem(8);
+                    }
+
+                    > .chevron {
+                        transition: all 0.2s ease-in-out;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            > ul {
+                list-style: inside;
+                transition: all 0.2s ease-in-out;
+                padding: toRem(16);
+                padding-left: calc(toRem(16) + toRem(25));
+            }
+        }
+    }
+
+    &__submit {
+        @include flexVerticalGap(5);
+        align-items: end;
+
+        > span {
+            font-size: toRem(22);
+            font-weight: 600;
+            color: var(--black);
+            width: fit-content;
+        }
+
+        > button {
+            width: fit-content;
+
+            &:disabled {
+            }
+        }
+
+        @media all and (max-width: $mobileSmall) {
+            > button {
+                width: 100%;
+            }
+        }
+    }
+
+    @media all and (max-width: $tablet) {
+        max-width: none;
+    }
 }
