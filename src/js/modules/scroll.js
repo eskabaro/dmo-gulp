@@ -1,13 +1,13 @@
 const observer = new IntersectionObserver(
-    (entries, observer) => {
+    (entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && window.scrollY > 100) {
                 smoothScrollTo(entry.target);
             }
         });
     },
     {
-        threshold: 0.5,
+        threshold: 0.6,
     }
 );
 
@@ -17,9 +17,9 @@ sections.forEach((item) => {
     observer.observe(item);
 });
 
-function smoothScrollTo(element) {
+const smoothScrollTo = (element) => {
     window.scrollTo({
         behavior: "smooth",
         top: element.offsetTop,
     });
-}
+};
