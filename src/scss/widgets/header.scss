@@ -117,16 +117,29 @@
             gap: toRem(8);
             transition: none;
 
-            > img {
-                opacity: 0.6;
+            > svg {
+                > g > path {
+                    stroke: $opacityText;
+
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        fill: $opacityText;
+                    }
+                }
             }
 
             @media (hover: hover) {
                 &:hover {
                     color: var(--white);
+                    > svg {
+                        > g > path {
+                            stroke: var(--white);
 
-                    > img {
-                        opacity: 1;
+                            &:nth-child(2),
+                            &:nth-child(3) {
+                                fill: var(--white);
+                            }
+                        }
                     }
                 }
             }

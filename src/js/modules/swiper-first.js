@@ -5,15 +5,16 @@ const listBox = document.querySelectorAll(".slide");
 
 new Swiper(".service_overview__swiper", {
     modules: [Pagination, Autoplay],
-    loopAdditionalSlides: 2,
+    loopAdditionalSlides: 4,
     initialSlide: 5,
-    // loop: true,
+    loop: true,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
     },
     speed: 650,
+    lazyPreloadPrevNext: 6,
     // spaceBetween: 20,
     slidesPerView: "auto",
     slideToClickedSlide: true,
