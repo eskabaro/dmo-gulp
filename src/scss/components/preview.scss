@@ -77,8 +77,9 @@
                 width: toRem(50);
                 height: toRem(50);
                 z-index: -1;
-                box-shadow: toRem(-100) toRem(50) toRem(300) toRem(50)
+                box-shadow: toRem(-50) toRem(50) toRem(300) toRem(55)
                     rgba(90, 209, 130, 1);
+                border-radius: 50%;
             }
 
             &::before {
@@ -90,8 +91,9 @@
                 width: toRem(50);
                 height: toRem(50);
                 z-index: -1;
-                box-shadow: toRem(180) toRem(-100) toRem(300) toRem(50)
+                box-shadow: toRem(150) toRem(-50) toRem(300) toRem(55)
                     rgba(43, 132, 216, 1);
+                border-radius: 50%;
             }
 
             > picture {
