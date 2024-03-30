@@ -5,7 +5,7 @@ const listBox = document.querySelectorAll(".slide");
 
 new Swiper(".service_overview__swiper", {
     modules: [Pagination, Autoplay],
-    loopAdditionalSlides: 4,
+    loopAdditionalSlides: 2,
     initialSlide: 5,
     loop: true,
     autoplay: {

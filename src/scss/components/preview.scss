@@ -1,25 +1,98 @@
 .preview {
     background-color: var(--midnightCharcoal);
 
+    overflow: hidden;
     &__container {
+        z-index: 1;
+        position: relative;
+
+        &__bg {
+            height: fit-content;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+
+            @media all and (max-width: $tablet) {
+                display: none;
+            }
+
+            > .image_wrapper {
+                position: relative;
+                width: fit-content;
+                height: fit-content;
+
+                > img {
+                    @include adaptiveValue("width", 1000, 750, 2200, 1440, 1);
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(-50%, -50%);
+                    width: toRem(100);
+                    height: toRem(100);
+                    z-index: -1;
+                    box-shadow: toRem(-100) toRem(50) toRem(400) toRem(100)
+                        rgba(90, 209, 130, 1);
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(-50%, -50%);
+                    width: toRem(100);
+                    height: toRem(100);
+                    z-index: -1;
+                    box-shadow: toRem(180) toRem(-100) toRem(400) toRem(150)
+                        rgba(43, 132, 216, 1);
+                }
+            }
+        }
+
         margin: auto;
         display: flex;
         justify-content: center;
-        background-repeat: no-repeat;
-        background-position: 90%;
-        background-size: auto 100%;
-        background-image: url("@img/earth-big.png");
         max-width: em(1835);
         padding-inline: $paddingContainer;
 
-        @media all and (max-width: em(1650)) {
-            background-size: auto 85%;
-        }
-
         &__mobile_bg {
+            width: fit-content;
+            margin: auto;
             text-align: center;
             display: none;
-            // background-image: url("@img/preview/earth-small-bg.png");
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                transform: translate(-50%, -50%);
+                width: toRem(50);
+                height: toRem(50);
+                z-index: -1;
+                box-shadow: toRem(-100) toRem(50) toRem(300) toRem(50)
+                    rgba(90, 209, 130, 1);
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                transform: translate(-50%, -50%);
+                width: toRem(50);
+                height: toRem(50);
+                z-index: -1;
+                box-shadow: toRem(180) toRem(-100) toRem(300) toRem(50)
+                    rgba(43, 132, 216, 1);
+            }
 
             > picture {
                 > img {
@@ -45,7 +118,6 @@
         }
 
         @media all and (max-width: $tablet) {
-            background-image: none !important;
             flex-direction: column;
 
             &__mobile_bg {
@@ -56,11 +128,6 @@
                 padding: toRem(33) 0 0 0;
             }
         }
-
-        @media all and (max-width: $pc) {
-            background-size: auto 70%;
-            // background-position: 110%;
-        }
     }
 }
 
@@ -68,7 +135,7 @@
     @include flexVerticalGap(13);
 
     > h2 {
-        @include font(toRem(36), 2.5vw, toRem(55), 400, var(--white));
+        @include font(toRem(36), 2.7vw, toRem(55), 400, var(--white));
         max-width: 80%;
     }
 
@@ -89,7 +156,7 @@
         padding: toRem(80) 0 toRem(144) 0;
     }
 
-    @media all and (max-width: $pc) {
+    @media all and (max-width: em(1235)) {
         > h2 {
             max-width: 30%;
         }
@@ -115,7 +182,7 @@
 
     &__wrapper {
         position: relative;
-        height: toRem(40);
+        height: toRem(42);
         overflow: hidden;
 
         > span {
@@ -163,7 +230,6 @@
 .content {
     &__heading {
         > h1 {
-            // background-color: aqua;
             @include font(
                 toRem(56),
                 8.3vw,
@@ -190,13 +256,12 @@
         margin-bottom: toRem(36);
         max-width: 50%;
         line-height: 108%;
-        @include font(toRem(16), 1.5vw, toRem(26), 400, $opacityText, null);
+        @include font(toRem(16), 1.3vw, toRem(26), 400, $opacityText, null);
     }
 
     @media all and (max-width: $tablet) {
         &__paragraph {
             max-width: none !important;
-            // margin-top: toRem(25);
             margin-bottom: toRem(8);
         }
     }
