@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    @@include('./html/widgets/head.html', { "title": "Title" })
-    <body>
-        <div class="wrapper">
-            @@include('./html/widgets/header.html', {})
-            <main class="root_main">
-                @@include('./html/components/preview.html', {})
-                <!-- ====  -->
-                @@include('./html/components/service-overview.html', {
-                "title":"Comprehensive coverage" })
-                <!-- ====  -->
-                <!-- @@include('./html/components/news-slider.html',
-                {"title":"Up-To-Date content"}) -->
+  @@include('./html/widgets/head.html', { "title": "Title" })
+  <body>
+    <div class="wrapper">
+      @@include('./html/widgets/header.html', {})
+      <main class="root_main">
+        @@include('./html/components/preview.html', {})
+        
+        @@include('./html/components/service-overview.html', {
+        "title":"Comprehensive coverage" })
 
-                <!-- @@include('./html/components/presentation.html',
-                {"title":"Request a Demo"}) -->
-            </main>
-            @@include('./html/widgets/footer.html', {})
-        </div>
+        @@include('./html/components/news-slider.html', {
+            "title":"Up-To-Date content"}) 
 
-        <script src="js/app.min.js"></script>
-    </body>
+        <!-- @@include('./html/components/presentation.html',{
+        "title":"Request a Demo"})  -->
+
+        @@include('./html/components/form.html',{
+        "title":"Request a Demo"})
+      </main>
+      @@include('./html/widgets/footer.html', {})
+    </div>
+
+    <script src="js/app.min.js"></script>
+  </body>
 </html>
