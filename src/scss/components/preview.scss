@@ -36,7 +36,9 @@
                     width: toRem(100);
                     height: toRem(100);
                     z-index: -1;
-                    box-shadow: toRem(-100) toRem(50) toRem(400) toRem(100)
+                    // box-shadow: toRem(-100) toRem(50) toRem(400) toRem(100)
+                    //     rgba(90, 209, 130, 1);
+                    box-shadow: toRem(-100) toRem(50) toRem(500) toRem(100)
                         rgba(90, 209, 130, 1);
                 }
 
@@ -49,7 +51,9 @@
                     width: toRem(100);
                     height: toRem(100);
                     z-index: -1;
-                    box-shadow: toRem(180) toRem(-100) toRem(400) toRem(150)
+                    // box-shadow: toRem(180) toRem(-100) toRem(400) toRem(150)
+                    //     rgba(43, 132, 216, 1);
+                    box-shadow: toRem(180) toRem(-100) toRem(500) toRem(150)
                         rgba(43, 132, 216, 1);
                 }
             }

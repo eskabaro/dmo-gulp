@@ -1,13 +1,23 @@
+let windowWidth = window.innerWidth;
+
+window.addEventListener("resize", () => {
+    windowWidth = window.innerWidth;
+});
+
 const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting && window.scrollY > 100) {
+            if (
+                entry.isIntersecting &&
+                window.scrollY > 100 &&
+                windowWidth >= 1200
+            ) {
                 smoothScrollTo(entry.target);
             }
         });
     },
     {
-        threshold: 0.5,
+        threshold: 0.6,
     }
 );
 

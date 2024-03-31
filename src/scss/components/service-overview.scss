@@ -161,6 +161,7 @@
 .slide {
     position: relative;
     overflow: hidden;
+    box-shadow: none !important;
 
     &__content {
         @include flexVerticalGap(5);
