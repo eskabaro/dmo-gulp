@@ -1,302 +1,300 @@
 .preview {
-    background-color: var(--midnightCharcoal);
+  background-color: var(--midnightCharcoal);
 
-    overflow: hidden;
-    &__container {
-        z-index: 1;
+  overflow: hidden;
+  &__container {
+    z-index: 1;
+    position: relative;
+
+    &__bg {
+      height: fit-content;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+
+      @media all and (max-width: $tablet) {
+        display: none;
+      }
+
+      > .image_wrapper {
         position: relative;
+        width: fit-content;
+        height: fit-content;
 
-        &__bg {
-            height: fit-content;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: -1;
-
-            @media all and (max-width: $tablet) {
-                display: none;
-            }
-
-            > .image_wrapper {
-                position: relative;
-                width: fit-content;
-                height: fit-content;
-
-                > img {
-                    @include adaptiveValue("width", 1000, 750, 2200, 1440, 1);
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    right: 50%;
-                    transform: translate(-50%, -50%);
-                    width: toRem(100);
-                    height: toRem(100);
-                    z-index: -1;
-                    // box-shadow: toRem(-100) toRem(50) toRem(400) toRem(100)
-                    //     rgba(90, 209, 130, 1);
-                    box-shadow: toRem(-100) toRem(50) toRem(500) toRem(100)
-                        rgba(90, 209, 130, 1);
-                    -webkit-box-shadow: toRem(-100) toRem(50) toRem(500)
-                        toRem(100) rgba(90, 209, 130, 1);
-                    -moz-box-shadow: toRem(-100) toRem(50) toRem(500) toRem(100)
-                        rgba(90, 209, 130, 1);
-                }
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    right: 50%;
-                    transform: translate(-50%, -50%);
-                    width: toRem(100);
-                    height: toRem(100);
-                    z-index: -1;
-                    // box-shadow: toRem(180) toRem(-100) toRem(400) toRem(150)
-                    //     rgba(43, 132, 216, 1);
-                    -webkit-box-shadow: toRem(180) toRem(-100) toRem(500)
-                        toRem(150) rgba(43, 132, 216, 1);
-                    -moz-box-shadow: toRem(180) toRem(-100) toRem(500)
-                        toRem(150) rgba(43, 132, 216, 1);
-                    box-shadow: toRem(180) toRem(-100) toRem(500) toRem(150)
-                        rgba(43, 132, 216, 1);
-                }
-            }
+        > img {
+          @include adaptiveValue("width", 1000, 750, 2200, 1440, 1);
         }
 
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        max-width: em(1835);
-        padding-inline: $paddingContainer;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 50%;
+          transform: translate(-50%, -50%);
+          width: toRem(100);
+          height: toRem(100);
+          z-index: -1;
+          border-radius: 50%;
+          box-shadow: toRem(-100) toRem(50) toRem(400) toRem(100)
+            rgba(90, 209, 130, 1);
+          // box-shadow: toRem(-100) toRem(50) toRem(500) toRem(100)
+          //     rgba(90, 209, 130, 0.4);
+          // -webkit-box-shadow: toRem(-100) toRem(50) toRem(500)
+          //     toRem(100) rgba(90, 209, 130, 1);
+          // -moz-box-shadow: toRem(-100) toRem(50) toRem(500) toRem(100)
+          //     rgba(90, 209, 130, 1);
 
-        &__mobile_bg {
-            width: fit-content;
-            margin: auto;
-            text-align: center;
-            display: none;
-            position: relative;
-
-            &::after {
-                content: "";
-                position: absolute;
-                top: 50%;
-                right: 50%;
-                transform: translate(-50%, -50%);
-                width: toRem(50);
-                height: toRem(50);
-                z-index: -1;
-                border-radius: 50%;
-                box-shadow: toRem(-50) toRem(50) toRem(300) toRem(55)
-                    rgba(90, 209, 130, 1);
-                -moz-box-shadow: toRem(-50) toRem(50) toRem(300) toRem(55)
-                    rgba(90, 209, 130, 1);
-                -webkit-box-shadow: toRem(-50) toRem(50) toRem(300) toRem(55)
-                    rgba(90, 209, 130, 1);
-            }
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                right: 50%;
-                transform: translate(-50%, -50%);
-                width: toRem(50);
-                height: toRem(50);
-                z-index: -1;
-                border-radius: 50%;
-                -moz-box-shadow: toRem(150) toRem(-50) toRem(300) toRem(55)
-                    rgba(43, 132, 216, 1);
-                -webkit-box-shadow: toRem(150) toRem(-50) toRem(300) toRem(55)
-                    rgba(43, 132, 216, 1);
-                box-shadow: toRem(150) toRem(-50) toRem(300) toRem(55)
-                    rgba(43, 132, 216, 1);
-            }
-
-            > picture {
-                > img {
-                    max-width: 100%;
-                    height: auto;
-                }
-            }
-
-            > img {
-                max-width: 100%;
-                height: auto;
-            }
+          @media (max-width: em(1919)) {
+            box-shadow: toRem(-100) toRem(50) toRem(400) toRem(100)
+              rgba(90, 209, 130, 0.4);
+          }
         }
 
-        &__content {
-            @include container();
-            @include flexVerticalGap(10);
-            width: 100%;
-            padding: toRem(120) 0 toRem(110) 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 50%;
+          transform: translate(-50%, -50%);
+          width: toRem(100);
+          height: toRem(100);
+          z-index: -1;
+          border-radius: 50%;
+          box-shadow: toRem(180) toRem(-100) toRem(400) toRem(150)
+            rgba(43, 132, 216, 1);
+          // -webkit-box-shadow: toRem(180) toRem(-100) toRem(150)
+          //     toRem(150) rgba(43, 132, 216, 0.4);
+          // -moz-box-shadow: toRem(180) toRem(-100) toRem(500)
+          //     toRem(150) rgba(43, 132, 216, 1);
+          // box-shadow: toRem(180) toRem(-100) toRem(500) toRem(150)
+          //     rgba(43, 132, 216, 1);
+
+          @media (max-width: em(1919)) {
+            box-shadow: toRem(180) toRem(-100) toRem(400) toRem(150)
+              rgba(43, 132, 216, 0.4);
+          }
         }
-
-        @media all and (max-width: $tablet) {
-            flex-direction: column;
-
-            &__mobile_bg {
-                display: block;
-            }
-
-            &__content {
-                padding: toRem(33) 0 0 0;
-            }
-        }
+      }
     }
+
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    max-width: em(1835);
+    padding-inline: $paddingContainer;
+
+    &__mobile_bg {
+      width: fit-content;
+      margin: auto;
+      text-align: center;
+      display: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        width: toRem(50);
+        height: toRem(50);
+        z-index: -1;
+        border-radius: 50%;
+        box-shadow: toRem(-50) toRem(50) toRem(300) toRem(55)
+          rgba(90, 209, 130, 0.4);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        width: toRem(50);
+        height: toRem(50);
+        z-index: -1;
+        border-radius: 50%;
+        box-shadow: toRem(150) toRem(-50) toRem(300) toRem(55)
+          rgba(43, 132, 216, 0.4);
+      }
+
+      > picture {
+        > img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      > img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &__content {
+      @include container();
+      @include flexVerticalGap(10);
+      width: 100%;
+      padding: toRem(120) 0 toRem(110) 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media all and (max-width: $tablet) {
+      flex-direction: column;
+
+      &__mobile_bg {
+        display: block;
+      }
+
+      &__content {
+        padding: toRem(33) 0 0 0;
+      }
+    }
+  }
 }
 
 .info {
-    @include flexVerticalGap(13);
+  @include flexVerticalGap(13);
 
+  > h2 {
+    @include font(toRem(36), 2.7vw, toRem(55), 400, var(--white));
+    max-width: 80%;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(toRem(155), 1fr));
+    gap: toRem(28);
+
+    &__item {
+      height: fit-content;
+    }
+  }
+
+  @media all and (max-width: $tablet) {
+    background-color: var(--midnightNavy);
+    box-shadow: 0 0 0 100vmax var(--midnightNavy);
+    clip-path: inset(0 -100vmax);
+    padding: toRem(80) 0 toRem(144) 0;
+  }
+
+  @media all and (max-width: em(1235)) {
     > h2 {
-        @include font(toRem(36), 2.7vw, toRem(55), 400, var(--white));
-        max-width: 80%;
+      max-width: 30%;
     }
 
     &__list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(toRem(155), 1fr));
-        gap: toRem(28);
+      max-width: 50%;
+    }
+  }
 
-        &__item {
-            height: fit-content;
-        }
+  @media all and (max-width: $tablet) {
+    > h2 {
+      max-width: none;
     }
 
-    @media all and (max-width: $tablet) {
-        background-color: var(--midnightNavy);
-        box-shadow: 0 0 0 100vmax var(--midnightNavy);
-        clip-path: inset(0 -100vmax);
-        padding: toRem(80) 0 toRem(144) 0;
+    &__list {
+      max-width: none;
     }
-
-    @media all and (max-width: em(1235)) {
-        > h2 {
-            max-width: 30%;
-        }
-
-        &__list {
-            max-width: 50%;
-        }
-    }
-
-    @media all and (max-width: $tablet) {
-        > h2 {
-            max-width: none;
-        }
-
-        &__list {
-            max-width: none;
-        }
-    }
+  }
 }
 
 .item {
-    @include flexVerticalGap(3);
+  @include flexVerticalGap(3);
 
-    &__wrapper {
-        position: relative;
-        height: toRem(42);
-        overflow: hidden;
+  &__wrapper {
+    position: relative;
+    height: toRem(42);
+    overflow: hidden;
 
-        > span {
-            position: absolute;
-            top: 50%;
-            display: flex;
-            align-items: center;
-            left: 0;
-            transform: translateY(-50%);
-            @include font(
-                toRem(40),
-                3.3vw,
-                toRem(52),
-                500,
-                var(--electricSkyBlue)
-            );
+    > span {
+      position: absolute;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      left: 0;
+      transform: translateY(-50%);
+      @include font(toRem(40), 3.3vw, toRem(52), 500, var(--electricSkyBlue));
 
-            &.active {
-                animation: slidein 50ms ease-in-out infinite;
-            }
-        }
+      &.active {
+        animation: slidein 50ms ease-in-out infinite;
+      }
+    }
+  }
+
+  @keyframes slidein {
+    from {
+      top: toRem(-70);
     }
 
-    @keyframes slidein {
-        from {
-            top: toRem(-70);
-        }
-
-        to {
-            top: toRem(70);
-        }
+    to {
+      top: toRem(70);
     }
+  }
 
-    > p {
-        color: $opacityText;
-        font-size: toRem(14);
-        font-weight: 400;
-    }
+  > p {
+    color: $opacityText;
+    font-size: toRem(14);
+    font-weight: 400;
+  }
 
-    @media all and (max-width: $tablet) {
-        gap: toRem(8);
-    }
+  @media all and (max-width: $tablet) {
+    gap: toRem(8);
+  }
 }
 
 .content {
-    &__heading {
-        > h1 {
-            @include font(
-                toRem(56),
-                8.3vw,
-                toRem(146),
-                400,
-                var(--white),
-                var(--bebasNeue),
-                100%
-            );
-            display: flex;
-            flex-direction: column;
+  &__heading {
+    > h1 {
+      @include font(
+        toRem(56),
+        8.3vw,
+        toRem(146),
+        400,
+        var(--white),
+        var(--bebasNeue),
+        100%
+      );
+      display: flex;
+      flex-direction: column;
 
-            > span:first-child {
-                color: var(--skyAzure);
+      > span:first-child {
+        color: var(--skyAzure);
 
-                > span {
-                    color: var(--springBud);
-                }
-            }
+        > span {
+          color: var(--springBud);
         }
+      }
     }
+  }
 
+  &__paragraph {
+    margin-bottom: toRem(36);
+    max-width: 50%;
+    line-height: 108%;
+    @include font(toRem(16), 1.3vw, toRem(26), 400, $opacityText, null);
+  }
+
+  @media all and (max-width: $tablet) {
     &__paragraph {
-        margin-bottom: toRem(36);
-        max-width: 50%;
-        line-height: 108%;
-        @include font(toRem(16), 1.3vw, toRem(26), 400, $opacityText, null);
+      max-width: none !important;
+      margin-bottom: toRem(8);
     }
+  }
 
-    @media all and (max-width: $tablet) {
-        &__paragraph {
-            max-width: none !important;
-            margin-bottom: toRem(8);
-        }
+  @media all and (max-width: em(1500)) {
+    &__paragraph {
+      max-width: 35%;
     }
+  }
 
-    @media all and (max-width: em(1500)) {
-        &__paragraph {
-            max-width: 35%;
-        }
+  @media all and (max-width: em(1300)) {
+    &__paragraph {
+      max-width: 30%;
     }
-
-    @media all and (max-width: em(1300)) {
-        &__paragraph {
-            max-width: 30%;
-        }
-    }
+  }
 }
