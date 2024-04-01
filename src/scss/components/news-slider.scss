@@ -39,12 +39,14 @@
 
             > .swiper-wrapper {
                 > .swiper-slide {
-                    &:first-child {
-                        margin-top: toRem(64);
-                    }
+                    @media all and (min-width: $tablet) {
+                        &:first-child {
+                            margin-top: toRem(64);
+                        }
 
-                    &:last-child {
-                        margin-bottom: toRem(64);
+                        &:last-child {
+                            margin-bottom: toRem(64);
+                        }
                     }
                 }
             }
